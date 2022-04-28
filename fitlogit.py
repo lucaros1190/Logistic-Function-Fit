@@ -2,7 +2,7 @@
 # fitlogit.py Python script to fit data with a logistic function
 # Created by Luca Rossini on 26 February 2021
 # E-mail luca.rossini@unitus.it
-# Last update 27 Febryary 2021
+# Last update 26 April 2022
 
 import pandas as pd
 import plotly.graph_objs as go
