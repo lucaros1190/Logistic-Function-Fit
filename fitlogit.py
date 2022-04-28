@@ -96,16 +96,6 @@ r_squared = 1 - (ss_res / ss_tot)
 
 ndf = len(x) - 2
 
-# Calculate the chi-squared (with error below the fraction)
-
-chi_sq = 0
-for i in range(len(x)):
-    chi_sq = pow((y[i] - fitted_fun[i]), 2)/err_y[i]
-
-# Calculate the P-value from chi-square
-
-Pvalue = 1 - chi2.sf(chi_sq, ndf)
-
 # Calculate AIC and BIC
 
 AIC = 2 * 3 - 2 * np.log(ss_res/len(x))
@@ -126,8 +116,6 @@ for i in range(len(best_fit_line)):
     print(parname[i] + str(round(best_fit_line[i], 7)) + ' +/- ' + str(round(err[i],7)))
 
 print(' R-squared = ', round(r_squared, 5))
-print(' Chi-squared = ', round(chi_sq, 5))
-print(' P-value = ', round(Pvalue, 7))
 print(' Number of degrees of freedom (NDF) =', ndf)
 print(' Akaike Information Criterion (AIC):', round(AIC, 5))
 print(' Bayesian Information Criterion (BIC)', round(BIC, 5))
